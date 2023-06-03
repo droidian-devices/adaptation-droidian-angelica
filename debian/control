@@ -12,7 +12,7 @@ Architecture: all
 Depends: ${misc:Depends},
          adaptation-hybris-api29-phone,
          adaptation-angelica-configs,
-         linux-bootimage-xiaomi-angelica,
+         linux-bootimage-xiaomi-angelica:arm64,
          wlr-randr,
 Description: adapatation-angelica-meta
  angelica api29 adaptation metapackage
