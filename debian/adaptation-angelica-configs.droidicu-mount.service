@@ -1,12 +1,13 @@
 [Unit]
 Description=force everything to use 32 bit versions of libicu*
 Requires=lxc@android.service
+After=phosh.service
 
 [Service]
 Type=oneshot
-ExecStart=/bin/sh -c 'mount --bind /android/apex/com.android.runtime/lib/libicuuc.so /android/apex/com.android.runtime/lib64/libicuuc.so'
-ExecStart=/bin/sh -c 'mount --bind /android/apex/com.android.runtime/lib/libicui18n.so /android/apex/com.android.runtime/lib64/libicui18n.so'
-ExecStart=/bin/sh -c 'rm -rf /home/droidian/.cache/gstreamer-1.0/'
+ExecStart=-/usr/bin/mount --bind /android/apex/com.android.runtime/lib/libicuuc.so /android/apex/com.android.runtime/lib64/libicuuc.so
+ExecStart=-/usr/bin/mount --bind /android/apex/com.android.runtime/lib/libicui18n.so /android/apex/com.android.runtime/lib64/libicui18n.so
+ExecStart=-/usr/bin/rm -rf /home/droidian/.cache/gstreamer-1.0/
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=graphical.target
